@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
 import MovieDetails from './pages/MovieDetails'
 import Navbar from './components/Navbar'
@@ -9,13 +9,13 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('')
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Navbar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
       <Routes>
         <Route path="/" element={<Home searchQuery={searchQuery} />} />
         <Route path="/movie/:id" element={<MovieDetails />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
